@@ -1,0 +1,89 @@
+/* ОБНУЛЕНИЕ */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box; /* МЕНЯЕТ РАЗМЕР ШИРИНЫ БЛОКА ЧТОБЫ УДОБНЕЙ БЫЛО ВЕРСТАТЬ */
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  background: #fafafa;
+  font-size: 14px; /* шрифт текста по умолчанию */
+  color: #242b42; /* цвет текста по умолчанию */
+  font-weight: 500; /* толщина шрифта по умолчанию */
+  font-family: Montserrat; /* если один шрифт то можно без кавычек */
+}
+
+/* =================================================================== */
+/* обертка */
+.wrapper {
+  min-width: 100%;
+  overflow: hidden; /* скроет все лишнее, если добавить для body тогда не сможем скролить сайт  */
+  /* прибиваем футер вниз */
+  display: flex;
+  flex-direction: column;
+  background: green;
+  /*min-height: 100%; для проверки фиксированной шапки при скроле height: 1500px;  */
+  height: 1500px; /**/
+  position: relative;
+}
+
+/* ограничивающий контейнер */
+/* Технический класс , который не является БМ блоком */
+/* содержит общие стили */
+._container {
+  max-width: 1200px; /* ограничиваем ширину контейнера */
+  margin: 0px auto; /* позволит нашему контейнеру выстроиться посередине */
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header__container {
+  background-color: orange;
+  height: 50px;
+}
+
+.page {
+  flex: 1 1 auto;
+  margin-top: 50px;
+
+  display: flex; /*РАСТЯНЕТ page__container на всю высоту	*/
+}
+.page__container {
+  flex-grow: 1; /*РАСТЯНЕТ page__container на всю высоту	*/
+  background-color: #c6f183;
+}
+.footer {
+}
+.footer__container {
+  background: yellow;
+}
